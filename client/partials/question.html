@@ -1,0 +1,56 @@
+<div ng-controller="QuestionController">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<div ng-controller="QuestionController">
+
+	<a href="#/main">Go to Polls</a> | <a href="#/addQuestion">Add a Question</a> | <a href="#/">Logout</a><br>
+	<div class="question_table">
+		<table class="table table-striped table-hover">
+			<div class="alert alert-info" role="alert">
+				<h3> {{question.topic}} </h3>
+			</div>
+			<h3> Click the vote button to choose one: </h3>
+			<tr>
+				<th> Option </th>
+				<th> Current Count of Votes </th>
+				<th> Action </th>
+			</tr>
+				<td> {{question.category}} </td>
+				<td> {{question.category.length}} </td>
+				<td><span style="color:green"><button ng-click="likes(Q._id)">{{Q.like}} Vote </button></span></td>
+			</tr>
+				<td> {{question.category2}} </td>
+				<td> {{question.category.length}} </td>
+				<td><span style="color:green"><button ng-click="likes(Q._id)">{{Q.like}} Vote </button></span></td>
+			</tr>
+				<td> {{question.category3}} </td>
+				<td> {{question.category.length}} </td>
+				<td><span style="color:green"><button ng-click="likes(Q._id)">{{Q.like}} Vote </button></span></td>
+			</tr>
+				<td> {{question.category4}} </td>
+				<td> {{question.category.length}} </td>
+				<td><span style="color:green"><button ng-click="likes(Q._id)">{{Q.like}} Vote </button></span></td>
+			</tr>
+		</table>
+		<table class="table table-striped table-hover">
+			<tr>
+				<th> Answer: </th>
+				<th> Author: </th>
+				<th> Like: </th>
+				<th> Dislike: </th>
+			</tr>
+			<tr ng-repeat="Q in question.categories">
+				<td>{{Q.category}}</td>
+				<td>{{Q.category2}}</td>
+				<td><span style="color:green"><button ng-click="likes(Q._id)">+{{Q.like}} <span class ="glyphicon glyphicon-thumbs-up" </span></button></span></td>
+				<td><span style="color:red"><button ng-click="dislikes(Q._id)">+{{Q.dislike}} <span class ="glyphicon glyphicon-thumbs-down" </span></button></span></td>
+			</tr>
+		</table>
+	</div>
+</div>
